@@ -1,0 +1,9 @@
+﻿ .textboxmultiline{font-family:Calibri ; font-size:15px; color:#000000; text-align:left; vertical-align:top; 
+                  padding:0;margin-bottom:2px;border-width: thin; border-color: #000000; border : solid 1px #778899 ;max-height:40px;min-height: 50px;max-width:260px;min-width:260px;}
+.textboxmultiline:focus{font-family:Calibri ; font-size:15px; color:#000000; text-align:left; vertical-align:top;
+                  padding:0;margin-bottom:2px;border-color:#DAA520;border-width :1.8px;max-height:50px;min-height:50px;max-width:260px;min-width:260px;}
+.textboxmultilineComp{font-family:Calibri ; font-size:15px; color:#000000; text-align:left; vertical-align:top; 
+                  padding:0;margin-bottom:2px;border-width: thin; border-color: #000000; border : solid 1px #778899 ;max-height:107px;min-height: 107px;max-width:610px;min-width:610px;}
+.textboxmultilineComp:focus{font-family:Calibri ;  font-size:15px; color:#000000; text-align:left; vertical-align:top;
+                  padding:0;margin-bottom:2px;border-color:#DAA520;border-width :1.8px;max-height:107px;min-height:107px;max-width:610px;min-width:610px;}
+

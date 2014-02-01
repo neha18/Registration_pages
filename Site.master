@@ -1,0 +1,286 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <%--<webopt:BundleReference runat="server" Path="~/Content/css" />--%>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="globals/strip.css" rel="stylesheet" type="text/css" />
+  <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+     
+   
+  
+     <script  type="text/javascript" >
+    function setHW() {
+        var modalDialog = $find("divcont");
+        
+         var w =screen.width-30;  
+         var h = screen.height-140;  
+     }
+         </script>
+    <script type="text/javascript">
+        function showdiv(dv) {
+
+           t = document.getElementById('inerdiv').style.display
+
+            if (dv == "tabdiv" || dv == "innerdiv" || dv == "chgpass") {
+                t = "none";
+            }
+
+            if (t == "none" || t == '') {
+                document.getElementById('inerdiv').style.display = "block";
+            }
+            if (t == "block") {
+
+                document.getElementById('inerdiv').style.display = "none";
+
+            }
+        }
+
+    </script>
+     <script type="text/javascript">
+         $(".element").hover(function () {
+             //fadeout first image using jQuery fadeOut
+             $(".img1").fadeOut(300);
+             //fadein second image using jQuery fadeIn 
+             $(".content").fadeIn(300);
+         }, function () {
+             //fadeout second image using jQuery fadeOut
+             $(".img1").fadeIn(300);
+             //fadein first image using jQuery fadeIn
+             $(".content").fadeOut(300);
+         });
+
+         function showdiv(obt) {
+             //alert('f');
+             document.getElementById("hoverdiv").style.display = "block";
+            
+             document.getElementById("Div3").style.display = "none";
+         }
+         function hidediv(obt) {
+             //alert('f');
+             document.getElementById("hoverdiv").style.display = "none";
+             document.getElementById("Div3").style.display = "block";
+         }
+    </script>
+
+     
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=272931&clcid=0x409 --%>
+                <%--Framework scripts--%>
+               <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="jquery.ui.combined" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <%--  <header>--%>
+          
+        <div class="content-wrapper">
+            <div id="Div1" style="position: fixed; top: 0%; background-color: #fff; width: 93.7%; height: 40px; left: 3.2%;">
+            </div>
+            <div id="Div5" style="position: fixed; background-color: #EFC11B; width: 93.7%; height: 62px; left: 3.2%;">
+
+                <ul id="menu">
+                    <li style="width: 180px; text-align: right; top: -6px;">
+                        <img alt="" src="Images/logo.png" height="60px" /></li>
+
+                    <li style="width: 10px; vertical-align: middle; top: -3px; left: 95px;">
+                        <img alt="" src="Images/search2.png" height="50px" /></li>
+                 
+                   
+
+                    <li style="width: 200px; top: -3px; left: 135px;">
+                          <div id="Div3">
+                        <asp:TextBox ID="txtSearch" runat="server" Width="345px" Height="48px" BorderStyle="None"></asp:TextBox>
+                              </div> 
+                        <div id="hoverdiv" style="background-color:red; display:none; width:345px">
+                            <table style="width: 100%">
+                                    <tr>
+                                        <td>
+                                            <asp:Label ID="LblFLName" runat="server" Text="" Font-Bold="True" Width="150px" Font-Size="12px"></asp:Label>
+                                         
+                                          
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Label ID="LblSuaveid" runat="server" Text="" Font-Bold="True" Font-Size="10px"></asp:Label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Label ID="LblEmailId" runat="server" Text="" Font-Bold="True" Font-Size="10px"></asp:Label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Label ID="TxtAbout" runat="server" Text="Label" Font-Bold="True" Font-Size="10px"></asp:Label>
+                                       
+                                      
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <asp:Label ID="LblUni" runat="server" Text="" Font-Bold="True" Font-Size="10px"></asp:Label>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Label ID="LblCourse" runat="server" Text=""  Font-Bold="True" Font-Size="10px"></asp:Label>,
+                                            <asp:Label ID="LblYear" runat="server" Text="" Font-Bold="True" Font-Size="10px"></asp:Label>,
+                                            <asp:Label ID="LblCity" runat="server" Text="" Font-Bold="True" Font-Size="10px"></asp:Label>
+                                        </td>
+                                    </tr>
+                                   
+                                </table>
+                               
+                    </div>
+
+
+                    </li>
+                    <li style="width: 10px; vertical-align: middle; top: -3px; left: 285px;">
+                        <img alt="" src="Images/search1.png" height="50px" /></li>
+
+                    <li style="width: 10px; vertical-align: middle; top: 10px; left: 370px;">
+                        <img alt="" src="Images/notification.png" height="30px" /></li>
+                     
+                        <li style="width: 10px; vertical-align: middle; top: 1px; left: 400px; cursor:pointer">
+
+                         <div id="image" onmouseover="showdiv(this);" onmouseout="hidediv(this);">
+                        <img src="" runat="server" id="ProfileImg" alt="" width="50" height="50" />
+                
+        </div>
+                        </li> 
+                    <%--<li class="btnSett" id="liset" onclick="showdiv(this.id)">
+                        <%-- <ul id="inerdiv" onclick="showdiv(this.id)">
+                        <li id="cngpass" onclick="showdiv(this.id)"><a href="#">Change Password</a></li>
+                        <li id="tabdiv" onclick="showdiv(this.id)">
+                            <table>
+                                <tr>
+                                    <td class="tb">
+                                        <asp:Label ID="Label1" runat="server" CssClass="fntpass" Text="Old Password :"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txtOlPass" CssClass="bc" Height="23px" Width="120px" runat="server"
+                                            TextMode="Password"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tb">
+                                        <asp:Label ID="Label2" runat="server" Text="New Password :" CssClass="fntpass"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txtNPass" TextMode="Password" CssClass="bc" Height="23px" Width="120px"
+                                            runat="server"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tb">
+                                        <asp:Label ID="Label3" runat="server" Text="Re-Enter Password :" CssClass="fntpass"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txtrepas" CssClass="bc" TextMode="Password" Height="23px" Width="120px"
+                                            runat="server"></asp:TextBox>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li style="text-align: center"><a href="#" id="anchor1" onclick="ChangePassword();">
+                            Confirm</a></li>
+                        <li id="Li1" onclick="showdivfram(this.id)"><a href="#">Change BackGround Setting</a></li>
+                    </ul>
+                    </li>--%>
+                </ul>
+                   
+                <%-- <div class="float-left">
+                <p class="site-title">
+                    <a runat="server" href="~/">your logo here</a></p>
+            </div>
+            <div class="float-right">
+                <section id="login">
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul>
+                                <li><a id="registerLink" runat="server" href="~/Account/Register">Register</a></li>
+                                <li><a id="loginLink" runat="server" href="~/Account/Login">Log in</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <p>
+                                Hello, <a runat="server" class="username" href="~/Account/Manage" title="Manage your account">
+                                    <asp:LoginName runat="server" CssClass="username" />
+                                </a>!
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" />
+                            </p>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </section>
+                <nav>
+                    <ul id="menu">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>--%>
+            </div>
+      
+            <div id="Div2" style="position: fixed; width: 93.7%; top: 180px; left: 0px;">
+                <ul id="menu1" style="float:left ;">
+                    <li style="width: 390px; text-align: right; left: 10px; float:left">
+                        <img alt="" src="Images/Social.png" height="30px" /></li>
+                    <li style="width: 80px; text-align: right; left: 10px; float:left">
+                        <img alt="" src="Images/project.png" height="30px" /></li>
+                    <li style="width: 80px; text-align: right; left: 10px; float:left">
+                        <img alt="" src="Images/tags.png" height="30px" /></li>
+                    <li style="width: 80px; text-align: right; left: 10px; float:left">
+                        <img alt="" src="Images/home.png" height="30px" /></li>
+                   </ul>
+            </div>
+          
+        </div>
+        
+       
+        <%-- </header>--%>
+        <div id="body">
+            <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+            <section>
+               
+                <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+               
+            </section>
+        </div>
+        <%--<footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>
+                    &copy; <%: DateTime.Now.Year %> - My ASP.NET Application
+                </p>
+            </div>
+        </div>
+    </footer>--%>
+    
+    </form>
+</body>
+</html>
